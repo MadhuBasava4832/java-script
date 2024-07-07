@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            function func(){
+                document.getElementsByClassName("class")[0].innerHTML="you already clicked";
+            }
+        </script>
+        <style>
+            img{
+                width: 200px; height: 200px;
+            }
+        </style>
+        <script>
+            function image(){
+                // document.getElementsByTagName("img")[0].src="../photos/Itachi and Sasuke .jpg"
+                var x=document.getElementsByTagName("img")[0]
+                x.src="../photos/Itachi and Sasuke .jpg"
+            }
+            function imag(){
+                var y=document.getElementsByClassName("im")[0]
+                y.setAttribute("src","../photos/Itachi and Sasuke .jpg")
+            }
+            function bg(){
+                document.getElementsByTagName("body")[0].style.backgroundColor="whitesmoke"
+            }
+        </script>
+    </head>
+    <body>
+        <div id="lkj">hello</div>
+        <div class="class">text dslmkv</div>
+        <button onclick="func()">to change text</button><br>
+        <!-- <script>
+            console.log(document.getElementById("lkj").innerHTML)
+            console.log(document.getElementsByClassName("class"))
+            console.log(document.getElementsByClassName("class")[0])
+            console.log(document.getElementsByClassName("class")[0].innerHTML)
+            console.log(document.getElementsByTagName("div"))
+        </script> -->
+
+
+
+<!-- <img src="../photos/Itachi and Sasuke .jpg" alt=""> -->
+        <img src="../photos/Allu Arjun .jpg" alt="">
+        <button onclick="image()">to change img</button><br>
+        <img class="im">
+        <button onclick="imag()">to add img</button><br>
+        <button onclick="bg()">to change bg</button>
+    </body>
+</html>

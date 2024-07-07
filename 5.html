@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            .form{
+                /* display: flex;
+                justify-content: center; */
+            }
+        </style>
+        <script>
+            var obj = {
+                // name:"",
+                // age:0,
+                // gender:"",
+                // booth_no:"",
+                // feedback:"",
+                // mobile_no:"",
+                // date_time:"",
+            }
+            
+            function fun(event){
+                obj[event.target.name] = event.target.value;
+            }
+
+
+            console.log(obj)
+
+
+        </script>
+    </head>
+    <body>
+        <!-- <button onclick="console.log('onclick in the button')">clich here</button>
+        <div style="width: 200px; height: 200px; background-color: aquamarine;" onclick="alert('onclicked is working')" ></div>
+        <div style="width: 200px; height: 200px; background-color: rgb(187, 187, 241);" onmousemove="console.log('mouse moved')" ondblclick="alert('double click is working')"></div>
+        <div style="width: 200px; height: 200px; background-color: rgb(156, 156, 173);" onmousewheel="console.log('mousewheel')"></div>
+        <input type="text" onkeydown="alert('onkeydown keyboard event')"/>
+        <input type="text" onkeyup="alert('onkeyup keyboard event')"/>
+        <input type="text" value="jkvnfndlik" onchange="fun()" />
+        <input type="text" value="jkvnfndlik" onchange="func(this.value)" /> -->
+
+        <div class="form">
+            <form action="">
+                <label>NAME : </label>
+                <input type="text" name="firstName" onchange="{fun(event)}"/><br><br>
+                <label>AGE : </label>
+                <input type="number" /><br><br>
+                <label>GENDER : </label>
+                <input type="radio" name="gen" />Male
+                <input type="radio" name="gen" />female <br><br>
+                <label for="1">ELECTION BOOTH NUMBER : </label>
+                <input type="number" name="" id="1" /><br><br>
+                <label for="">FEEDBACK ON ELECTION : </label>
+                <textarea></textarea><br><br>
+                <label for="">MOBILE NO : </label>
+                <input type="number" /><br><br>
+                <label for="">DATE AND TIME : </label>
+                <input type="datetime" name="" id="" /><br><br>                 
+            </form>
+        </div>
+        <button >submit</button>
+
+
+        
+
+    </body>
+</html>
