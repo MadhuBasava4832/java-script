@@ -1,0 +1,206 @@
+<html>
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100svh;
+            display: flex;
+            font-size: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            column-gap: 20px;
+            row-gap: 50px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            column-gap: 20px;
+            row-gap: 20px;
+        }
+
+        .clock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 20px;
+        }
+
+        button {
+            width: 100px;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 10px;
+        }
+
+        .sa {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 1px rgb(133, 133, 133);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="clock">clock :
+            <div class="hours sa"></div>:
+            <div class="minutes sa"></div>:
+            <div class="seconds sa"></div>
+        </div>
+        <div class="clock">timer :
+            <div class="hou sa">00</div>:
+            <div class="min sa">00</div>:
+            <div class="seco sa">00</div>:
+            <div class="milseco sa">00</div>
+
+        </div>
+        <div class="buttons">
+            <button onclick="startbutton()">start</button>
+            <button onclick="stopbutton()">stop</button>
+            <button onclick="resetbutton()">reset</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+        function fun() {
+            var x = new Date;
+            var hours = document.getElementsByClassName("hours")[0].innerHTML = x.getHours();
+            var minutes = document.getElementsByClassName("minutes")[0].innerHTML = x.getMinutes();
+            var seconds = document.getElementsByClassName("seconds")[0].innerHTML = x.getSeconds();
+            // if (x.getSeconds() == 20) {
+            //     clearInterval(address)
+            //     console.log("it is working");
+            // }
+        }
+        setInterval(fun, 1000);
+        // var address = setInterval(fun, 1000);
+
+
+
+
+
+
+        // var ms = 0,sec=0,min=0,ho=0;
+        // function startbutton() {
+        //         ms=ms+1;            
+        //         document.getElementsByClassName("milseco")[0].innerHTML=ms;
+        //     if(ms==1000)
+        // {
+        //     sec=sec+1;
+        //     document.getElementsByClassName('seco')[0].innerHTML=sec;
+        //     ms=0;
+        // }
+        // if(sec==60)
+        // {
+        //     min=min+1;
+        //     document.getElementsByClassName('min')[0].innerHTML=min;
+        //     sec=0;
+        // }
+        // if(min==60)
+        // {
+        //     ho=ho+1;
+        //     document.getElementsByClassName('hou')[0].innerHTML=ho;
+        //     min=0;
+        // }
+        //         // secc.innerHTML = ms;
+
+        //     }
+
+        //     var temp=setInterval(startbutton, 1);
+        //     function stopbutton()
+        //     {
+        //         clearInterval(temp);
+        //     }
+        //     function resetbutton()
+        //     {
+        //         document.getElementsByClassName('sa').innerHTML="00";
+        //     }
+
+
+
+
+
+
+
+
+
+
+
+        function startbutton() {
+            let ms = 0;
+            function milsecondss() {
+                if (ms < 1000) {
+                    ms += 1;
+                }
+                else {
+                    ms = 0;
+                }
+                var secc = document.getElementsByClassName("milseco")[0];
+                secc.innerHTML = ms;
+
+            }
+
+             var stop=setInterval(milsecondss, 1)
+
+            let s = 0;
+            function secondss() {
+                if (s < 59) {
+                    s += 1;
+                }
+                else {
+                    s = 0;
+                }
+                var secc = document.getElementsByClassName("seco")[0];
+                secc.innerHTML = s;
+            }
+            var stop=setInterval(secondss, 1000)
+            let m = 0;
+            function minutess() {
+                if (s < 59) {
+                    m += 1;
+                }
+                else {
+                    m = 0;
+                }
+                var secc = document.getElementsByClassName("min")[0];
+                secc.innerHTML = m;
+            }
+            var stop=setInterval(minutess, 60000)
+            let h = 0;
+            function hourss() {
+                if (s < 59) {
+                    h += 1;
+                }
+                else {
+                    h = 0;
+                }
+                var secc = document.getElementsByClassName("hou")[0];
+                secc.innerHTML = h;
+            }
+            setInterval(hourss, 60000)
+        }
+
+
+        function stopbutton() {
+            clearInterval(stop);
+         }
+
+
+
+    </script>
+</body>
+
+</html>
