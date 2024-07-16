@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <style>
+
+
+
+        .container {
+            display: none;
+            position: absolute;
+            width: 100px;
+            transition: all 1s;
+        }
+
+        .options {
+            background-color: rgb(187, 185, 185);
+            padding: 5 10;
+            text-align: center;
+        }
+
+        .options:hover {
+            cursor: pointer;
+            transform: scale(1.08);
+        }
+        .red{color: red; }
+
+
+
+
+
+
+
+        /* body{
+    margin:0px;
+    display: flex;
+    justify-content: flex-end;
+}
+button{
+    height:fit-content;
+    font-size: 32px;
+}
+.Options_division{
+    position: absolute;
+    top:0;
+    left:0;
+    color:white;
+    width:100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(32, 31, 31);
+    border-radius: 10px;
+    transition: all 1s;
+}
+.Options_division div{
+    padding:5px 10px;
+    font-size: 32px;
+}
+.Options:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+    text-shadow: 0px 0px 15px white;
+} */
+
+
+    </style>
+    <script>
+        function fun() {
+            var x = document.getElementsByClassName("container")[0]
+            x.style.display = "block";
+            x.style.width="200px";
+
+        }   
+        function clo(){
+            var x = document.getElementsByClassName("container")[0]
+            x.style.display="none";
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="fun()">button</button>
+    <div class="container">
+        <div class="options">home</div>
+        <div class="options">about</div>
+        <div class="options">contact</div>
+        <div class="options red" onclick="clo()">close</div>
+    </div>
+</body>
+
+</html>
