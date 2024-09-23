@@ -35,17 +35,20 @@ function fun() {
             i += 1;
             var tr = document.createElement("tr")
             tr.setAttribute("id", i);
-            var td1 = document.createElement("td")
+            // var td1 = document.createElement("td")
+
             var update = document.createElement("button");
             update.innerHTML = "Update";
             update.setAttribute("onclick", "upd(this)")
+
             var button = document.createElement("button");
             button.innerHTML = "Delete";
             button.setAttribute("onclick", "del(this)");
 
+
             Object.entries(ele).map(data => {
                 var td1 = document.createElement("td")
-                td1.innerHTML = data[1]
+                td1.innerHTML = data[1] 
                 tr.appendChild(td1);
             })
             var td = document.createElement("td")
@@ -61,6 +64,7 @@ function fun() {
         var tablee = document.getElementById("table");
         var update = document.createElement("button");
         update.innerHTML = "Update";
+        // button.setAttribute("onclick", "upd(this)")
         var button = document.createElement("button");
         button.innerHTML = "Delete";
         button.setAttribute("onclick", "del(this)")
@@ -82,7 +86,8 @@ function fun() {
 }
 function del(button) {
     if (confirm("click OK to delete")) {
-        var row = button.parentNode.parentNode; console.log(row);
+        var row = button.parentNode.parentNode;
+        console.log(row);
         var table = document.getElementById("table");
         table.removeChild(row);
     }
